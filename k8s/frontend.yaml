@@ -4,8 +4,8 @@ metadata:
     name: url-config
 data:
     .env: |
-        PUBLIC_URL=/kfed0910e2e37a
-        REACT_APP_PATH=/kfed0910e2e37a
+        PUBLIC_URL=/kc0de58e30a59a
+        REACT_APP_PATH=/kc0de58e30a59a
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -34,7 +34,7 @@ spec:
         spec:
             containers:
                 - name: frontend
-                  image: krmp-d2hub-idock.9rum.cc/goorm/techcamp-frontend
+                  image: krmp-d2hub-idock.9rum.cc/dev-test/repo_66a6b8af26ea
                   imagePullPolicy: Always
                   ports:
                       - containerPort: 80
@@ -53,7 +53,7 @@ metadata:
     annotations:
         kargo.9rum.cc/phase: dev
     labels:
-        app.kubernetes.io/managed-by: kargocd
+        app.kubernetes.io/managed-by: kargocd 
     name: frontend-service
     namespace: default
 spec:
@@ -83,4 +83,4 @@ spec:
                   - backend:
                         serviceName: frontend-service
                         servicePort: 80
-                    path: /kfed0910e2e37a(/|$)(.*)
+                    path: /kc0de58e30a59a(/|$)(.*)
